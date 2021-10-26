@@ -6,8 +6,16 @@
 - Count the exact matching words as the frequencies
 - The Request Object (DTO) will contain 2 Strings - givenWord, notebookEntry
 - The REST API endpoint will be:
-  - `/records/frequency` Response Object: `{"frequency": 1}`
-  - `/records/similar-entries` Response Object: `{"similarWords": ["Words", "Wor", "word"]}`
+  - `/research/frequency` Response Object: `{
+    "frequency": 1
+    }`
+  - `/research/similar-words` Response Object: `{
+    "similarWords": [
+    "Words",
+    "Wor",
+    "word"
+    ]
+    }`
 
 ## Further improvements
 
