@@ -8,23 +8,39 @@
 		{
 			"name": "Get Frequencies",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
-				"url": null
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"givenWord\": \"Word\",\n    \"notebookEntry\": \"Word Word Word word\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/research/frequency",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"research",
+						"frequency"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Get Similar Words",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"givenWord\": \"Word\",\n    \"notebookEntry\": \"Word Words Wor word\"\n}",
+					"raw": "{\n    \"givenWord\": \"Word\",\n    \"notebookEntry\": \"Word Word Word word\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
