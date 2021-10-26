@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  RESEARCH_SERVICE: 'http://localhost:8080/research'
 };

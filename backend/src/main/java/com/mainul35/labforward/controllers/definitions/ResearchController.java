@@ -6,10 +6,7 @@ import com.mainul35.labforward.controllers.dtos.response.SimilarWordsResponse;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -18,10 +15,10 @@ import javax.validation.Valid;
 @CrossOrigin(origins = "${cross.origin}")
 public interface ResearchController {
 
-    @GetMapping(value = "/frequency", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/frequency", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<FrequencyResponse> getFrequencies(@Valid @RequestBody ResearchDto researchDto);
 
-    @GetMapping(value = "/similar-words", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/similar-words", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<SimilarWordsResponse> getSimilarWords(@Valid @RequestBody ResearchDto researchDto);
 
 }

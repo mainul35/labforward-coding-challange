@@ -1,16 +1,55 @@
-<form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Given Word</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+<div class="row">
+  <div class="col">
+    <form>
+      <div class="mb-3">
+        <label for="givenWord" class="form-label">Given Word</label>
+        <input type="text" [(ngModel)]="givenWord" name="givenWord" class="form-control" id="givenWord" >
+      </div>
+      <div class="mb-3">
+        <label for="notebookEntries" class="form-label">Notebook Entries</label>
+        <textarea [(ngModel)]="notebookEntries" class="form-control" name="notebookEntries" id="notebookEntries"></textarea>
+      </div>
+      <div class="btn-group">
+        <div class="row">
+          <div class="col-6">
+            <button type="submit" class="btn btn-primary" (click)="viewFrequencies()">View Frequencies</button>
+          </div>
+          <div class="col-6">
+            <button type="submit" class="btn btn-primary" (click)="viewSimilarWords()">View Similar Words</button>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Notebook Entries</label>
-    <textarea type="text" class="form-control" id="exampleInputPassword1"></textarea>
+</div>
+<hr>
+<div class="row">
+  <div class="col-6">
+    <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Frequencies</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>{{frequencies}}</td>
+    </tr>
+    </tbody>
+  </table>
   </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  <div class="col-6">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Similar Words</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let word of similarWords">
+        <td>{{word}}</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>
