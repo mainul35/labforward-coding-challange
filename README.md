@@ -21,3 +21,4 @@
 
 - For simplicity, a text file of the notebook entries upload is not provided for now. But can be implemented if time permits.
 - Support for multiple entries in a single request
+- Improve the UI
