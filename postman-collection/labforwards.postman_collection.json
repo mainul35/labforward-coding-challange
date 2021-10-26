@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "32e273bc-fb2f-4ff5-868c-98bbfc458553",
+		"name": "labforwards",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Frequencies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Get Similar Words",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"givenWord\": \"Word\",\n    \"notebookEntry\": \"Word Words Wor word\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/research/similar-words",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"research",
+						"similar-words"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost:8080",
+			"value": "labforwards_host"
+		}
+	]
+}
