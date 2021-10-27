@@ -17,6 +17,10 @@
     ]
     }`
 
+* A postman collection can be found in the parent directory
+
+### Total time taken: approximately 6 hours
+
 ## How to Run
 
 To run in development mode, from the root directory of the project, run
@@ -27,7 +31,7 @@ To run in development mode, from the root directory of the project, run
 This will create runnable jar of the backend. now navigate to the /backend/target dir and run:
 
 ```
- $ java -jar labforward-backend-${version}.jar
+ $ java -jar labforward-backend-${your-jar-version}.jar
 ```
 
 Now, to run the frontend application, navigate to the /frontend folder and run the following command.
@@ -44,4 +48,5 @@ It will run your application in `http://localhost:4200`. The page will be like b
 
 - For simplicity, a text file of the notebook entries upload is not provided for now. But can be implemented if time permits.
 - Support for multiple entries in a single request
+- Implementing reactive in the backend for API calls
 - Improve the UI
