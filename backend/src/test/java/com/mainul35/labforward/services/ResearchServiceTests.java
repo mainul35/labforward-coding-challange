@@ -29,14 +29,14 @@ public class ResearchServiceTests {
     void testFrequencies() {
         var frequencies = researchService.getFrequencies (researchDto);
         Assertions.assertNotNull (frequencies, "Frequencies must not be empty");
-        Assertions.assertEquals (3, frequencies.getFrequency (), "Frequencies will be 3 for the given data");
+        Assertions.assertEquals (3, frequencies.frequency (), "Frequencies will be 3 for the given data");
     }
 
     @Test
     void testSimilarWords() {
         var similarWords = researchService.getSimilarWords (researchDto);
         Assertions.assertNotNull (similarWords, "Similar words must not be empty");
-        Assertions.assertEquals (Set.of ("word"), similarWords.getSimilarWords (), "Words are similar");
+        Assertions.assertEquals (Set.of ("word"), similarWords.similarWords (), "Words are similar");
     }
 
 }

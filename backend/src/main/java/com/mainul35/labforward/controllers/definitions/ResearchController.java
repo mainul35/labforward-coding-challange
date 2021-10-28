@@ -1,8 +1,7 @@
 package com.mainul35.labforward.controllers.definitions;
 
-import com.mainul35.labforward.controllers.dtos.response.FrequencyResponse;
 import com.mainul35.labforward.controllers.dtos.request.ResearchDto;
-import com.mainul35.labforward.controllers.dtos.response.SimilarWordsResponse;
+import com.mainul35.labforward.controllers.dtos.response.FrequencyResponse;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -19,6 +18,6 @@ public interface ResearchController {
     ResponseEntity<FrequencyResponse> getFrequencies(@Valid @RequestBody ResearchDto researchDto);
 
     @PostMapping(value = "/similar-words", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    ResponseEntity<SimilarWordsResponse> getSimilarWords(@Valid @RequestBody ResearchDto researchDto);
+    ResponseEntity<?> getSimilarWords(@Valid @RequestBody ResearchDto researchDto);
 
 }
