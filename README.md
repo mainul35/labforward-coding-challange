@@ -1,7 +1,7 @@
 ## Idea to satisfy the specification
  
 - The Notebook entry and word will be 2 String inputs
-- Check all length mismatching words (|string1 - string2| > 2 ?) for faster processing
+- Check all length mismatching words (|string1.length - string2.length| > 1 ?) for faster processing
 - Check each words of input with Levenshtein Distance algorithm and insert in a map for similar word entries
 - Count the exact matching words as the frequencies
 - The Request Object (DTO) will contain 2 Strings - givenWord, notebookEntry
