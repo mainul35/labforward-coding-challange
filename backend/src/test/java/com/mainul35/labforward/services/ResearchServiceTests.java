@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.validation.Validator;
 import java.util.Set;
 
 @SpringBootTest
@@ -16,13 +17,15 @@ public class ResearchServiceTests {
     @Autowired
     private ResearchService researchService;
 
+    @Autowired
+    Validator validator;
+
     private ResearchDto researchDto;
 
     @BeforeEach
     public void init() {
-        this.researchDto = new ResearchDto ();
-        researchDto.setGivenWord ("Word");
-        researchDto.setNotebookEntry ("Word Word Word word");
+        this.researchDto = new ResearchDto ("Word", "Word Word Word word");
+        validator.validate(this.researchDto);
     }
 
     @Test
@@ -38,5 +41,4 @@ public class ResearchServiceTests {
         Assertions.assertNotNull (similarWords, "Similar words must not be empty");
         Assertions.assertEquals (Set.of ("word"), similarWords.similarWords (), "Words are similar");
     }
-
 }

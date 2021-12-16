@@ -14,15 +14,15 @@ import java.util.stream.Stream;
 public class DefaultResearchService implements ResearchService {
     @Override
     public FrequencyResponse getFrequencies(ResearchDto researchDto) {
-        var frequencies = getAllWordsAsStream (researchDto.getNotebookEntry ())
-                .filter (s -> s.equals (researchDto.getGivenWord ())).count ();
+        var frequencies = getAllWordsAsStream (researchDto.notebookEntry ())
+                .filter (s -> s.equals (researchDto.givenWord ())).count ();
         return new FrequencyResponse (frequencies);
     }
 
     @Override
     public SimilarWordsResponse getSimilarWords(ResearchDto researchDto) {
-        var words = getAllWordsAsStream (researchDto.getNotebookEntry ())
-                .filter (s -> LevenshteinDistanceUtil.isWithinLevenshteinDistanceBounds (researchDto.getGivenWord (), s))
+        var words = getAllWordsAsStream (researchDto.notebookEntry ())
+                .filter (s -> LevenshteinDistanceUtil.isWithinLevenshteinDistanceBounds (researchDto.givenWord (), s))
                 .collect(Collectors.toSet());
         return new SimilarWordsResponse (words);
     }
